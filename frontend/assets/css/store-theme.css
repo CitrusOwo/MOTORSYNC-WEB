@@ -1,0 +1,722 @@
+/* ============================================================
+   STORE THEME - MotorSync GPS
+   ============================================================
+   Uses the shared design tokens from variables.css.
+   Only defines catalog/product-specific component styles.
+   No background, font, or navbar overrides — all pages share
+   the same identity from variables.css + style.css.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Catalog Page
+   ---------------------------------------------------------- */
+body.store-page {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+body.store-page .catalog {
+  background: var(--color-bg-primary);
+  padding-top: calc(var(--nav-h, 90px) + 48px);
+}
+
+body.store-page .catalog_breadcrumb {
+  color: var(--color-text-muted);
+}
+
+body.store-page .catalog_breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .catalog_breadcrumb a:hover {
+  color: var(--color-text-primary);
+}
+
+body.store-page .catalog_breadcrumb span:last-child {
+  color: var(--color-text-primary);
+}
+
+/* Sidebar */
+body.store-page .catalog_sidebar_section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+body.store-page .catalog_sidebar_title {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.store-page .catalog_range::-webkit-slider-thumb {
+  background: var(--color-accent);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.store-page .catalog_range::-moz-range-thumb {
+  background: var(--color-accent);
+}
+
+body.store-page .catalog_range {
+  background: var(--color-border-default);
+}
+
+body.store-page .catalog_price_labels {
+  color: var(--color-text-muted);
+}
+
+body.store-page .catalog_filter_btn {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border: none;
+  font-family: var(--font);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 10px 20px;
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .catalog_filter_btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+body.store-page .catalog_checkbox span {
+  color: var(--color-text-secondary);
+}
+
+body.store-page .catalog_checkbox input[type="checkbox"] {
+  accent-color: var(--color-accent);
+}
+
+body.store-page .catalog_bestseller_item {
+  border-radius: var(--radius-lg);
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .catalog_bestseller_item:hover {
+  background: var(--color-bg-secondary);
+}
+
+body.store-page .catalog_bestseller_img {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+}
+
+body.store-page .catalog_bestseller_img svg rect,
+body.store-page .catalog_bestseller_img svg circle {
+  stroke: var(--color-text-primary);
+}
+
+body.store-page .catalog_bestseller_img svg circle[fill] {
+  fill: var(--color-text-primary);
+}
+
+body.store-page .catalog_bestseller_name {
+  color: var(--color-text-primary);
+}
+
+body.store-page .catalog_bestseller_price_old {
+  color: var(--color-text-muted);
+}
+
+body.store-page .catalog_bestseller_price_current {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* Toolbar */
+body.store-page .catalog_search {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-lg);
+  font-family: var(--font);
+  transition:
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .catalog_search::placeholder {
+  color: var(--color-text-muted);
+}
+
+body.store-page .catalog_search:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-muted);
+}
+
+body.store-page .catalog_results_count {
+  color: var(--color-text-muted);
+}
+
+body.store-page .catalog_sort {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-lg);
+  font-family: var(--font);
+}
+
+body.store-page .catalog_view_toggle {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
+
+body.store-page .catalog_view_btn {
+  color: var(--color-text-muted);
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .catalog_view_btn--active {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+}
+
+/* Product Cards */
+body.store-page .product_card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .product_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.store-page .product_img_wrapper {
+  background: var(--color-bg-secondary);
+}
+
+body.store-page .product_img svg rect,
+body.store-page .product_img svg circle,
+body.store-page .product_img svg line,
+body.store-page .product_img svg path,
+body.store-page .product_img svg polyline,
+body.store-page .product_img svg polygon {
+  stroke: #374151;
+}
+
+body.store-page .product_img svg circle[fill],
+body.store-page .product_img svg rect[fill] {
+  fill: #374151;
+}
+
+body.store-page .product_img svg text {
+  fill: #374151;
+}
+
+body.store-page .product_badges {
+  top: 14px;
+  left: 14px;
+}
+
+body.store-page .product_badge--new {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+body.store-page .product_badge--offer {
+  background: #111827;
+  color: var(--color-text-inverse);
+}
+
+body.store-page .product_badge--best {
+  background: #374151;
+  color: var(--color-text-inverse);
+}
+
+body.store-page .product_category {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+body.store-page .product_name {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .product_desc {
+  color: var(--color-text-muted);
+}
+
+body.store-page .product_price_current {
+  color: var(--color-text-primary);
+  font-weight: 800;
+}
+
+body.store-page .product_price_old {
+  color: var(--color-text-muted);
+}
+
+body.store-page .product_actions {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--color-border-default);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+body.store-page .product_btn_cart {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .product_btn_cart:hover {
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+body.store-page .product_btn_detail {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .product_btn_detail:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg-secondary);
+}
+
+body.store-page .catalog_no_results {
+  color: var(--color-text-muted);
+}
+
+/* ----------------------------------------------------------
+   Product Detail Page (PDP)
+   ---------------------------------------------------------- */
+body.store-page .pdp_breadcrumb {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_breadcrumb a {
+  color: var(--color-text-muted);
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_breadcrumb a:hover {
+  color: var(--color-text-primary);
+}
+
+body.store-page .pdp_breadcrumb span:last-child {
+  color: var(--color-text-primary);
+}
+
+body.store-page .pdp_gallery_main {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+}
+
+body.store-page .pdp_gallery_svg svg rect,
+body.store-page .pdp_gallery_svg svg circle,
+body.store-page .pdp_gallery_svg svg line,
+body.store-page .pdp_gallery_svg svg path,
+body.store-page .pdp_gallery_svg svg polyline {
+  stroke: #374151;
+}
+
+body.store-page .pdp_gallery_svg svg circle[fill],
+body.store-page .pdp_gallery_svg svg rect[fill] {
+  fill: #374151;
+}
+
+body.store-page .pdp_discount_badge {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-md);
+}
+
+body.store-page .pdp_zoom_hint {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_thumb {
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  transition:
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_thumb:hover {
+  border-color: var(--color-border-strong);
+}
+
+body.store-page .pdp_thumb--active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-muted);
+}
+
+body.store-page .pdp_thumb_svg svg rect,
+body.store-page .pdp_thumb_svg svg circle,
+body.store-page .pdp_thumb_svg svg line {
+  stroke: #6b7280;
+}
+
+body.store-page .pdp_thumb_svg svg circle[fill] {
+  fill: #6b7280;
+}
+
+body.store-page .pdp_badge--new { background: var(--color-accent); color: var(--color-text-inverse); }
+body.store-page .pdp_badge--offer { background: #111827; color: var(--color-text-inverse); }
+body.store-page .pdp_badge--best { background: #374151; color: var(--color-text-inverse); }
+
+body.store-page .pdp_title {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .pdp_meta {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_separator {
+  color: var(--color-border-default);
+}
+
+body.store-page .pdp_meta strong {
+  color: var(--color-text-secondary);
+}
+
+body.store-page .pdp_price_block {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+}
+
+body.store-page .pdp_price_old {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_price_current {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .pdp_price_discount {
+  background: #f0fdf4;
+  color: #166534;
+  border-radius: var(--radius-md);
+}
+
+body.store-page .pdp_stock--available { color: #166534; }
+body.store-page .pdp_stock--available .pdp_stock_dot { background: #22c55e; }
+body.store-page .pdp_stock--low { color: #92400e; }
+body.store-page .pdp_stock--low .pdp_stock_dot { background: #eab308; }
+body.store-page .pdp_stock_qty { color: var(--color-text-muted); }
+
+body.store-page .pdp_short_desc {
+  color: var(--color-text-secondary);
+}
+
+body.store-page .pdp_detail {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
+
+body.store-page .pdp_detail_label {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_detail_value {
+  color: var(--color-text-primary);
+}
+
+/* Buttons */
+body.store-page .pdp_btn--primary {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-lg);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_btn--primary:hover {
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+body.store-page .pdp_btn--outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_btn--outline:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg-secondary);
+  transform: translateY(-1px);
+}
+
+body.store-page .pdp_btn--whatsapp {
+  background: #25d366;
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  transition:
+    background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_btn--whatsapp:hover {
+  background: #1fad53;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+}
+
+/* Guarantees */
+body.store-page .pdp_guarantees {
+  border-top: 1px solid var(--color-border-default);
+}
+
+body.store-page .pdp_guarantee {
+  color: var(--color-text-secondary);
+}
+
+body.store-page .pdp_guarantee svg {
+  color: var(--color-text-primary);
+}
+
+/* Tabs */
+body.store-page .pdp_tabs_nav {
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+body.store-page .pdp_tab {
+  color: var(--color-text-muted);
+  font-family: var(--font);
+  font-weight: 600;
+  transition:
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_tab:hover {
+  color: var(--color-text-primary);
+}
+
+body.store-page .pdp_tab--active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+body.store-page .pdp_tab_panel p {
+  color: var(--color-text-secondary);
+}
+
+body.store-page .pdp_specs_list li {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-primary);
+}
+
+body.store-page .pdp_specs_list li svg {
+  stroke: var(--color-text-primary);
+}
+
+body.store-page .pdp_install_list li {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-secondary);
+}
+
+body.store-page .pdp_install_list li::before {
+  background: var(--color-bg-secondary);
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+body.store-page .pdp_faq_item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  transition:
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_faq_item[open] {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+body.store-page .pdp_faq_item summary {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+body.store-page .pdp_faq_item summary::after {
+  color: var(--color-text-primary);
+}
+
+body.store-page .pdp_faq_item p {
+  color: var(--color-text-secondary);
+}
+
+/* Related */
+body.store-page .pdp_related {
+  border-top: 1px solid var(--color-border-default);
+}
+
+body.store-page .pdp_related_title {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .pdp_related_card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.store-page .pdp_related_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.store-page .pdp_related_img {
+  background: var(--color-bg-secondary);
+}
+
+body.store-page .pdp_related_img svg rect,
+body.store-page .pdp_related_img svg circle,
+body.store-page .pdp_related_img svg line {
+  stroke: #6b7280;
+}
+
+body.store-page .pdp_related_img svg circle[fill] {
+  fill: #6b7280;
+}
+
+body.store-page .pdp_related_info h3 {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .pdp_related_current {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+body.store-page .pdp_related_old {
+  color: var(--color-text-muted);
+}
+
+/* Notification toast */
+body.store-page .notification {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-lg);
+}
+
+body.store-page .notification_title {
+  color: var(--color-text-primary);
+}
+
+body.store-page .notification_text {
+  color: var(--color-text-muted);
+}
+
+body.store-page .notification_icon svg {
+  stroke: var(--color-text-primary);
+}
+
+/* WhatsApp float */
+body.store-page .whatsapp_float {
+  background: #25d366;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+}
+
+/* ----------------------------------------------------------
+   Not Found Page
+   ---------------------------------------------------------- */
+body.store-page .pdp_not_found h2 {
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+
+body.store-page .pdp_not_found p {
+  color: var(--color-text-muted);
+}
+
+body.store-page .pdp_not_found .pdp_btn--primary {
+  background: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+/* ----------------------------------------------------------
+   Scrollbar
+   ---------------------------------------------------------- */
+body.store-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.store-page::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+body.store-page::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+
+body.store-page::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}

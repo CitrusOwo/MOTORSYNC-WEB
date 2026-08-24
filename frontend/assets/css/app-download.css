@@ -1,0 +1,332 @@
+/* ============================================================
+   APP DOWNLOAD - Sección de descarga de app
+   Estilo corporativo B/N/G
+   ============================================================ */
+
+.app-download {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #E5E5E5;
+}
+
+.app-download_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTENIDO
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-download_content {
+  position: relative;
+  z-index: 2;
+}
+
+.app-download_logo-container {
+  width: 100px;
+  height: 100px;
+  background: #000000;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.app-download_logo-container:hover {
+  transform: translateY(-4px);
+}
+
+.app-download_logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.app-download_title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.app-download_description {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FEATURES LIST
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-download_features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: grid;
+  gap: 16px;
+}
+
+.app-download_feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.app-download_feature svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #000000;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BOTONES DE DESCARGA
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-download_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.app-download_btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.app-download_btn:hover {
+  background: #1A1A1A;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.app-download_btn svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.app-download_btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.app-download_btn-label {
+  font-size: 0.7rem;
+  font-weight: 400;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.app-download_btn-store {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   VISUAL - MOCKUPS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-download_visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.app-download_mockups {
+  position: relative;
+  z-index: 2;
+}
+
+.app-download_phone {
+  animation: phoneFloat 4s ease-in-out infinite;
+}
+
+@keyframes phoneFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.app-download_phone svg {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DECORACIÓN
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-download_decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.app-download_circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.01) 100%);
+  animation: circleFloat 8s ease-in-out infinite;
+}
+
+.app-download_circle--1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -100px;
+}
+
+.app-download_circle--2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.app-download_circle--3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 20%;
+  animation-delay: 4s;
+  animation-duration: 12s;
+}
+
+@keyframes circleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (max-width: 1024px) {
+  .app-download {
+    padding: 80px 0;
+  }
+
+  .app-download_wrapper {
+    gap: 60px;
+  }
+
+  .app-download_phone svg {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-download {
+    padding: 60px 0;
+  }
+
+  .app-download_wrapper {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .app-download_visual {
+    order: -1;
+    min-height: 400px;
+  }
+
+  .app-download_phone svg {
+    width: 220px;
+  }
+
+  .app-download_title {
+    text-align: center;
+  }
+
+  .app-download_description {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .app-download_logo-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .app-download_features {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .app-download_buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-download_buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .app-download_btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-download_phone svg {
+    width: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-download_phone,
+  .app-download_circle {
+    animation: none !important;
+  }
+}

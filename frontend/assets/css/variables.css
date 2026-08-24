@@ -1,0 +1,261 @@
+/* ============================================================
+   MOTORSYNC DESIGN TOKENS - Light Theme Professional
+   ============================================================
+   Modern light theme for technology brand
+   Clean, professional, international aesthetic
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     COLORS - Background & Surfaces (CORPORATE B/W/G THEME)
+     ---------------------------------------------------------- */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-elevated: #FAFAFA;
+  --color-bg-card: #FFFFFF;
+  --color-bg-card-hover: #F9F9F9;
+  --color-bg-surface: #F8F8F8;
+  --color-bg-overlay: rgba(255, 255, 255, 0.95);
+  --color-bg-dark: #000000;
+  --color-bg-dark-secondary: #1A1A1A;
+
+  /* ----------------------------------------------------------
+     COLORS - Brand / Accent (Corporate Black)
+     ---------------------------------------------------------- */
+  --color-accent: #000000;
+  --color-accent-hover: #1A1A1A;
+  --color-accent-active: #333333;
+  --color-accent-muted: rgba(0, 0, 0, 0.08);
+  --color-accent-subtle: rgba(0, 0, 0, 0.04);
+  --color-accent-glow: rgba(0, 0, 0, 0.12);
+
+  /* ----------------------------------------------------------
+     COLORS - Secondary Accent
+     ---------------------------------------------------------- */
+  --color-blue: #0066FF;
+  --color-blue-light: #3385FF;
+  --color-blue-dark: #0052CC;
+  --color-blue-muted: rgba(0, 102, 255, 0.1);
+  --color-blue-border: rgba(0, 102, 255, 0.2);
+  --color-blue-glow: rgba(0, 102, 255, 0.15);
+
+  /* ----------------------------------------------------------
+     COLORS - Neutrals / Grays
+     ---------------------------------------------------------- */
+  --color-white: #FFFFFF;
+  --color-black: #0D0D0D;
+  --color-gray-50: #F8F9FA;
+  --color-gray-100: #F1F3F5;
+  --color-gray-200: #E9ECEF;
+  --color-gray-300: #DEE2E6;
+  --color-gray-400: #CED4DA;
+  --color-gray-500: #ADB5BD;
+  --color-gray-600: #868E96;
+  --color-gray-700: #495057;
+  --color-gray-800: #343A40;
+  --color-gray-900: #212529;
+
+  /* ----------------------------------------------------------
+     COLORS - Text (Corporate Grayscale)
+     ---------------------------------------------------------- */
+  --color-text-primary: #000000;
+  --color-text-secondary: #4A4A4A;
+  --color-text-tertiary: #6B6B6B;
+  --color-text-muted: #9E9E9E;
+  --color-text-accent: #000000;
+  --color-text-inverse: #FFFFFF;
+
+  /* ----------------------------------------------------------
+     COLORS - Borders (Corporate Gray)
+     ---------------------------------------------------------- */
+  --color-border-default: #E5E5E5;
+  --color-border-subtle: #F0F0F0;
+  --color-border-strong: #D4D4D4;
+  --color-border-accent: #000000;
+  --color-border-focus: rgba(0, 0, 0, 0.3);
+
+  /* ----------------------------------------------------------
+     COLORS - Glass / Frosted Effects
+     ---------------------------------------------------------- */
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-bg-strong: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: 16px;
+  --glass-blur-strong: 24px;
+
+  /* ----------------------------------------------------------
+     COLORS - Status / Semantic
+     ---------------------------------------------------------- */
+  --color-success: #20C997;
+  --color-success-light: #51CF66;
+  --color-success-dark: #099268;
+  --color-warning: #FFC107;
+  --color-warning-light: #FFD43B;
+  --color-warning-dark: #FF922B;
+  --color-error: #FA5252;
+  --color-error-light: #FF6B6B;
+  --color-error-dark: #C92A2A;
+  --color-info: #0066FF;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------------------------- */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 3.5rem;
+  --font-size-hero: 4.5rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: -0.01em;
+  --letter-spacing-wide: 0.01em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ----------------------------------------------------------
+     SPACING & SIZING
+     ---------------------------------------------------------- */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+  --spacing-5xl: 8rem;
+
+  --nav-height: 80px;
+  --nav-height-scrolled: 68px;
+  --section-padding: 120px;
+  --container-max-width: 1200px;
+  --container-padding: 2rem;
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS
+     ---------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------------------------
+     SHADOWS (Light theme - darker shadows)
+     ---------------------------------------------------------- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05),
+               0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08),
+               0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12),
+               0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.15),
+               0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-accent: 0 4px 20px rgba(0, 102, 255, 0.15),
+                   0 2px 8px rgba(0, 102, 255, 0.08);
+  --shadow-accent-lg: 0 8px 32px rgba(0, 102, 255, 0.2),
+                      0 4px 16px rgba(0, 102, 255, 0.12);
+  --shadow-blue: 0 4px 20px rgba(0, 102, 255, 0.15);
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+     ---------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ----------------------------------------------------------
+     Z-INDEX SCALE
+     ---------------------------------------------------------- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-nav: 1000;
+  --z-overlay: 1500;
+  --z-modal: 2000;
+  --z-toast: 3000;
+  --z-tooltip: 4000;
+
+  /* ----------------------------------------------------------
+     SHORT ALIASES
+     ---------------------------------------------------------- */
+  --bg: var(--color-bg-primary);
+  --bg-secondary: var(--color-bg-secondary);
+  --bg-elevated: var(--color-bg-elevated);
+  --bg-card: var(--color-bg-card);
+  --white: var(--color-white);
+  --black: var(--color-black);
+  --accent: var(--color-accent);
+  --accent-hover: var(--color-accent-hover);
+  --accent-bright: var(--color-blue-light);
+  --accent-dark: var(--color-accent-active);
+  --font: var(--font-family-primary);
+  --font-heading: var(--font-family-heading);
+  --nav-h: var(--nav-height);
+  --ease: var(--ease-default);
+  --border: var(--color-border-default);
+  --border-accent: var(--color-border-accent);
+  --border-hover: var(--color-border-strong);
+  --glass: var(--glass-bg);
+  --gray-200: var(--color-gray-200);
+  --gray-300: var(--color-gray-300);
+  --gray-400: var(--color-gray-400);
+  --gray-500: var(--color-gray-500);
+  --gray-600: var(--color-gray-600);
+  --gray-700: var(--color-gray-700);
+  --gray-800: var(--color-gray-800);
+}
+
+/* ----------------------------------------------------------
+   GRADIENT UTILITIES
+   ---------------------------------------------------------- */
+.gradient-text {
+  background: linear-gradient(135deg, #0066FF 0%, #004FC4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-bg-primary {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+}
+
+.gradient-bg-subtle {
+  background: linear-gradient(135deg, #E8E9EB 0%, #F5F5F7 100%);
+}

@@ -1,0 +1,655 @@
+/* ============================================================
+   HERO - Planeta 3D Real (VERSIÓN COMPLETA PARA MÓVIL)
+   ============================================================ */
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0 60px;
+    overflow: hidden;
+    background: #0A0E17;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fondo-inicio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTAINER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.hero_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTENIDO
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    background: rgba(74, 158, 255, 0.15);
+    border: 2px solid rgba(74, 158, 255, 0.25);
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #4A9EFF;
+    width: fit-content;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    backdrop-filter: blur(10px);
+}
+
+.hero_badge svg {
+    width: 14px;
+    height: 14px;
+    color: #4A9EFF;
+}
+
+.hero_title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #FFFFFF;
+    margin: 0;
+    text-shadow: 0 2px 40px rgba(0, 0, 0, 0.6);
+}
+
+.hero_title span {
+    display: block;
+    background: linear-gradient(135deg, #4A9EFF 0%, #FFFFFF 60%, #4A9EFF 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmerText 4s ease-in-out infinite;
+}
+
+@keyframes shimmerText {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero_subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 480px;
+    font-weight: 400;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero_subtitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin-top: 16px;
+    background: linear-gradient(90deg, #4A9EFF, #FFFFFF);
+    border-radius: 3px;
+}
+
+.hero_buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.hero_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 36px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero_btn--primary {
+    background: linear-gradient(135deg, #4A9EFF, #0066FF);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 4px 40px rgba(74, 158, 255, 0.3);
+}
+
+.hero_btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 50px rgba(74, 158, 255, 0.4);
+}
+
+.hero_btn--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero_btn--secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   GLOBO 3D
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-globe-container {
+    width: 420px;
+    height: 420px;
+    cursor: grab;
+    position: relative;
+}
+
+.hero-globe-container:active {
+    cursor: grabbing;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STATS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+
+.hero_stats::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4A9EFF, transparent);
+}
+
+.hero_stat {
+    text-align: center;
+}
+
+.hero_stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero_stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE - MÓVIL COMPLETO
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .hero_wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .hero_content { align-items: center; }
+    .hero_subtitle { max-width: 100%; }
+    .hero_subtitle::after { margin: 16px auto 0; }
+    .hero_badge { margin: 0 auto; }
+    .hero_buttons { justify-content: center; }
+    .hero_title { font-size: 3.2rem; }
+    .hero_stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .hero-globe-container { width: 350px; height: 350px; margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0 50px;
+        min-height: auto;
+    }
+    .hero_container { padding: 0 24px; }
+    .hero_wrapper { gap: 30px; margin-bottom: 40px; }
+    .hero_title { font-size: 2.8rem; }
+    .hero_subtitle { font-size: 0.95rem; }
+    
+    .hero_buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .hero_btn {
+        width: auto;
+        min-width: 120px;
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+    
+    .hero_stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding-top: 30px;
+    }
+    .hero_stat-value { font-size: 2rem; }
+    .hero_stat-label { font-size: 0.7rem; }
+    
+    .hero-globe-container { width: 280px; height: 280px; }
+}
+
+/* ─── MÓVIL - COMPLETO Y ORDENADO ─── */
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 0 30px !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .hero_container {
+        padding: 0 20px !important;
+    }
+    
+    .hero_wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 24px !important;
+    }
+    
+    /* Ocultar globo en móvil */
+    .hero_visual {
+        display: none !important;
+    }
+    
+    .hero_content {
+        align-items: center !important;
+        text-align: center !important;
+        gap: 14px !important;
+        width: 100% !important;
+    }
+    
+    .hero_badge {
+        font-size: 0.6rem !important;
+        padding: 5px 14px !important;
+        gap: 6px !important;
+        border-width: 1.5px !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .hero_badge svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
+    
+    .hero_title {
+        font-size: 2rem !important;
+        line-height: 1.1 !important;
+        text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    .hero_subtitle {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+        max-width: 100% !important;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4) !important;
+        padding: 0 4px !important;
+    }
+    
+    .hero_subtitle::after {
+        width: 50px !important;
+        height: 2px !important;
+        margin: 12px auto 0 !important;
+    }
+    
+    .hero_buttons {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 10px !important;
+        margin-top: 4px !important;
+    }
+    
+    .hero_btn {
+        flex: 1 1 auto !important;
+        min-width: 120px !important;
+        max-width: 180px !important;
+        padding: 12px 20px !important;
+        font-size: 0.8rem !important;
+        border-radius: 8px !important;
+        gap: 6px !important;
+    }
+    
+    .hero_btn svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    
+    .hero_stats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        padding-top: 20px !important;
+        border-top-width: 1px !important;
+    }
+    
+    .hero_stats::before {
+        width: 60px !important;
+        height: 2px !important;
+    }
+    
+    .hero_stat-value {
+        font-size: 1.5rem !important;
+        margin-bottom: 2px !important;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    .hero_stat-label {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.3px !important;
+    }
+}
+
+/* ─── MÓVIL MUY PEQUEÑO ─── */
+@media (max-width: 380px) {
+    .hero {
+        padding: 80px 0 20px !important;
+    }
+    
+    .hero_title {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero_subtitle {
+        font-size: 0.75rem !important;
+    }
+    
+    .hero_btn {
+        font-size: 0.7rem !important;
+        padding: 10px 14px !important;
+        min-width: 100px !important;
+    }
+    
+    .hero_stat-value {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero_stat-label {
+        font-size: 0.5rem !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+}
+
+.hero_scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+    cursor: pointer;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.hero_scroll-text {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.hero_scroll-arrow {
+    width: 24px;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.3);
+    animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(6px); opacity: 0.8; }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+@media (max-width: 480px) {
+    .hero_scroll-indicator {
+        bottom: 12px;
+    }
+    .hero_scroll-text {
+        font-size: 0.5rem;
+    }
+    .hero_scroll-arrow {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════
+   AUTOS ORBITANDO EL GLOBO
+   ═══════════════════════════════════════════════════════ */
+
+.hero-globe-container {
+    position: relative;
+}
+
+.hero-globe-cars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ─── Orbitas de los autos ─── */
+.hero-car-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    animation: orbitCar 15s linear infinite;
+}
+
+.hero-car-orbit--2 {
+    animation-duration: 20s;
+    animation-delay: -5s;
+}
+
+.hero-car-orbit--3 {
+    animation-duration: 25s;
+    animation-delay: -10s;
+}
+
+.hero-car-orbit--4 {
+    animation-duration: 18s;
+    animation-delay: -3s;
+}
+
+/* ─── Auto individual ─── */
+.hero-car {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(0, 102, 255, 0.6)) drop-shadow(0 0 30px rgba(0, 102, 255, 0.2));
+    transition: filter 0.3s ease;
+}
+
+.hero-car-orbit--2 .hero-car {
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 15px rgba(255, 68, 68, 0.6)) drop-shadow(0 0 30px rgba(255, 68, 68, 0.2));
+}
+
+.hero-car-orbit--3 .hero-car {
+    width: 22px;
+    height: 22px;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 215, 0, 0.2));
+}
+
+.hero-car-orbit--4 .hero-car {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 150, 0.5)) drop-shadow(0 0 30px rgba(0, 255, 150, 0.2));
+}
+
+/* ─── Animación de órbita ─── */
+@keyframes orbitCar {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-45%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(-45%) rotate(-360deg);
+    }
+}
+
+/* ─── Efecto de estela (línea detrás del auto) ─── */
+.hero-car::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0, 102, 255, 0.6), transparent);
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+
+.hero-car-orbit--2 .hero-car::after {
+    background: linear-gradient(90deg, rgba(255, 68, 68, 0.6), transparent);
+}
+
+.hero-car-orbit--3 .hero-car::after {
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.6), transparent);
+}
+
+.hero-car-orbit--4 .hero-car::after {
+    background: linear-gradient(90deg, rgba(0, 255, 150, 0.6), transparent);
+}
+
+/* ─── Ocultar en móviles ─── */
+@media (max-width: 768px) {
+    .hero-car {
+        width: 25px;
+        height: 25px;
+    }
+    .hero-car-orbit--2 .hero-car {
+        width: 20px;
+        height: 20px;
+    }
+    .hero-car-orbit--3 .hero-car {
+        width: 16px;
+        height: 16px;
+    }
+    .hero-car-orbit--4 .hero-car {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-globe-cars {
+        display: none;
+    }
+}
+
+.hero-globe-container {
+    cursor: default !important;
+}
+
+.hero-globe-container:active {
+    cursor: default !important;
+}
+
+#hero-globe-container {
+    cursor: default !important;
+}
+
+#hero-globe-container:active {
+    cursor: default !important;
+}

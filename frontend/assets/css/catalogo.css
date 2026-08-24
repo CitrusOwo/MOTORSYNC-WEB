@@ -1,0 +1,972 @@
+/* ============================================================
+   CATALOGO.CSS - MotorSync GPS Tracking
+   Versión mejorada - Diseño moderno y atractivo
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Page Section
+   ---------------------------------------------------------- */
+.catalog {
+    padding: calc(var(--nav-h, 80px) + 40px) 0 80px;
+    background: #0A0E17;
+    min-height: 100vh;
+}
+
+.catalog_container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ----------------------------------------------------------
+   Breadcrumb
+   ---------------------------------------------------------- */
+.catalog_breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.catalog_breadcrumb a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.catalog_breadcrumb a:hover {
+    color: #4A9EFF;
+}
+
+.catalog_breadcrumb span:last-child {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.catalog_breadcrumb .separator {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* ----------------------------------------------------------
+   Layout: Sidebar + Main
+   ---------------------------------------------------------- */
+.catalog_layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ----------------------------------------------------------
+   Sidebar - Mejorado
+   ---------------------------------------------------------- */
+.catalog_sidebar {
+    position: sticky;
+    top: calc(var(--nav-h, 80px) + 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.catalog_sidebar_section {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px 20px;
+    transition: all 0.3s ease;
+}
+
+.catalog_sidebar_section:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.catalog_sidebar_title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.catalog_sidebar_title svg {
+    width: 16px;
+    height: 16px;
+    color: #4A9EFF;
+}
+
+/* Price Range */
+.catalog_price_range {
+    margin-bottom: 16px;
+}
+
+.catalog_range {
+    width: 100%;
+    height: 4px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.catalog_range::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #4A9EFF;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(74, 158, 255, 0.3);
+}
+
+.catalog_range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #4A9EFF;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.catalog_price_labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.catalog_filter_btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(74, 158, 255, 0.15);
+    color: #4A9EFF;
+    border: 1px solid rgba(74, 158, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.catalog_filter_btn:hover {
+    background: #4A9EFF;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(74, 158, 255, 0.3);
+}
+
+/* Category Checkboxes */
+.catalog_filter_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.catalog_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+}
+
+.catalog_checkbox:hover {
+    color: #FFFFFF;
+}
+
+.catalog_checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #4A9EFF;
+    cursor: pointer;
+}
+
+/* Bestsellers Mini Cards */
+.catalog_bestsellers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.catalog_bestseller_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.catalog_bestseller_item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.catalog_bestseller_img {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #4A9EFF;
+}
+
+.catalog_bestseller_img svg {
+    width: 24px;
+    height: 24px;
+}
+
+.catalog_bestseller_info {
+    flex: 1;
+    min-width: 0;
+}
+
+.catalog_bestseller_name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.catalog_bestseller_price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.catalog_bestseller_price_old {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: line-through;
+}
+
+.catalog_bestseller_price_current {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #4A9EFF;
+}
+
+/* ----------------------------------------------------------
+   Main Area
+   ---------------------------------------------------------- */
+.catalog_main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Toolbar */
+.catalog_toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 16px 24px;
+}
+
+.catalog_toolbar_left {
+    flex: 1;
+    min-width: 200px;
+    max-width: 360px;
+}
+
+.catalog_search {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.catalog_search::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog_search:focus {
+    border-color: #4A9EFF;
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.catalog_toolbar_right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.catalog_results_count {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+}
+
+.catalog_sort {
+    padding: 10px 36px 10px 16px;
+    font-size: 0.85rem;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.3)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.catalog_sort option {
+    background: #0A0E17;
+    color: #FFFFFF;
+}
+
+.catalog_view_toggle {
+    display: flex;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.catalog_view_btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.catalog_view_btn--active {
+    background: #4A9EFF;
+    color: #FFFFFF;
+}
+
+/* ----------------------------------------------------------
+   Product Grid
+   ---------------------------------------------------------- */
+.catalog_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ----------------------------------------------------------
+   Product Card - Mejorada
+   ---------------------------------------------------------- */
+.product_card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-color: rgba(74, 158, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.product_card_link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Badges */
+.product_badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+
+.product_badge {
+    padding: 4px 12px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 6px;
+    color: #FFFFFF;
+}
+
+.product_badge--new {
+    background: #4A9EFF;
+    color: #FFFFFF;
+}
+
+.product_badge--offer {
+    background: #FF6B6B;
+    color: #FFFFFF;
+}
+
+.product_badge--best {
+    background: #FFD93D;
+    color: #000000;
+}
+
+.product_badge--top {
+    background: #6BCB77;
+    color: #FFFFFF;
+}
+
+/* Image */
+.product_img_wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 32px;
+}
+
+.product_img svg {
+    width: 60%;
+    height: 60%;
+    color: #4A9EFF;
+    opacity: 0.4;
+    transition: all 0.4s ease;
+}
+
+.product_card:hover .product_img svg {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.product_category_tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    padding: 4px 12px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Info */
+.product_info {
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.product_name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.product_desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+/* Meta: price + stock */
+.product_meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.product_price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.product_price_current {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4A9EFF;
+}
+
+.product_price_old {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: line-through;
+}
+
+.product_stock {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.product_stock_dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6BCB77;
+}
+
+.product_stock--low .product_stock_dot {
+    background: #FFD93D;
+}
+
+.product_stock--out .product_stock_dot {
+    background: #FF6B6B;
+}
+
+/* Actions */
+.product_actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.product_btn_cart {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #4A9EFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product_btn_cart:hover {
+    background: #3A8EFF;
+    box-shadow: 0 4px 20px rgba(74, 158, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.product_btn_cart svg {
+    width: 16px;
+    height: 16px;
+}
+
+.product_btn_detail {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product_btn_detail:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+}
+
+/* No results */
+.catalog_no_results {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+.catalog_no_results svg {
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 16px;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 1100px) {
+    .catalog_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .catalog_layout {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog_sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .catalog_sidebar_section:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .catalog {
+        padding-top: calc(var(--nav-h, 80px) + 24px);
+        padding-bottom: 60px;
+    }
+
+    .catalog_container {
+        padding: 0 20px;
+    }
+
+    .catalog_sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog_sidebar_section:last-child {
+        grid-column: span 1;
+    }
+
+    .catalog_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog_toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+
+    .catalog_toolbar_left {
+        max-width: 100%;
+    }
+
+    .catalog_toolbar_right {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .product_info {
+        padding: 16px 18px 20px;
+    }
+}
+
+/* ─── ESTILOS DE TARJETA DE PRODUCTO ─── */
+.product-card {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 16px;
+    padding: 20px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* ─── IMAGEN WRAPPER ─── */
+.product-card_image-wrapper {
+    position: relative;
+    background: #F5F5F5;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.product-card_image-wrapper img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+/* ─── BADGES (NUEVO, TOP, OFERTA) ─── */
+.product-card_badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+}
+
+.product-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    background: #000000;
+    line-height: 1.2;
+}
+
+.product-badge--new { background: #1A1A1A; }
+.product-badge--best { background: #000000; }
+.product-badge--offer { background: #D32F2F; }
+
+/* ─── CONTENIDO ─── */
+.product-card_category {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #888888;
+    text-transform: lowercase;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.product-card_title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 6px 0;
+}
+
+.product-card_desc {
+    font-size: 0.85rem;
+    color: #555555;
+    line-height: 1.5;
+    margin: 0 0 14px 0;
+    flex-grow: 1;
+}
+
+/* ─── PRECIOS ─── */
+.product-card_price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.product-price_current {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.product-price_old {
+    font-size: 0.9rem;
+    color: #888888;
+    text-decoration: line-through;
+}
+
+/* ─── BOTONES ─── */
+.product-card_actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.btn-add-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add-cart:hover {
+    background: #333333;
+}
+
+.btn-view-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5;
+    color: #111111;
+    border: 1px solid #EAEAEA;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-view-detail:hover {
+    background: #EAEAEA;
+}
+
+/* ─── CATEGORÍA EN SIDEBAR ─── */
+.catalog_sidebar_section {
+    margin-bottom: 30px;
+}
+
+.catalog_sidebar_title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.catalog_price_range {
+    margin-bottom: 16px;
+}
+
+.catalog_range {
+    width: 100%;
+    accent-color: #000;
+}
+
+.catalog_price_labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 6px;
+}
+
+.catalog_filter_btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.catalog_filter_btn:hover {
+    background: #333;
+}
+
+.catalog_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}
+.catalog_checkbox input[type="checkbox"] {
+    accent-color: #000;
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================================================
+   CORRECCIÓN FINAL: IMAGEN GRANDE EN CATÁLOGO
+   ============================================================ */
+
+/* Forzamos a la imagen a ocupar todo el espacio del recuadro */
+.product-card_image-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Aseguramos que el recuadro de la imagen siga siendo del mismo tamaño */
+.product-card_image-wrapper {
+    min-height: 180px !important; /* Tamaño fijo y cómodo */
+    padding: 15px !important;
+}
+
+/* ============================================================
+   QUITAR FONDO GRIS ALREDEDOR DE LA IMAGEN (CATÁLOGO)
+   ============================================================ */
+
+/* Cambiamos el fondo gris a blanco */
+.product-card_image-wrapper {
+    background: #FFFFFF !important;
+    border: 1px solid #EAEAEA !important; /* Opcional: un borde sutil para que se vea la caja */
+}
+
+/* Si quieres que el borde desaparezca y sea totalmente blanco, usa esto: */
+/* .product-card_image-wrapper {
+    background: transparent !important;
+    border: none !important;
+} */

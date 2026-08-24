@@ -1,0 +1,265 @@
+/* ═══════════════════════════════════════════════════════
+   STATS HERO - 99% con segmento en blanco GRANDE
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Contenedor principal ─── */
+.stats-hero {
+    padding: 80px 0 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    background: #0A0E17;
+}
+
+/* ─── Fondo ─── */
+.stats-hero_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.stats-hero_bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.stats-hero_bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 23, 0.70);
+    z-index: 1;
+}
+
+.stats-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ─── Grid ─── */
+.stats-hero_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ═══ LADO IZQUIERDO ═══ */
+.stats-hero_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-hero_circle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ─── Círculo con segmento en blanco GRANDE ─── */
+.stats-hero_circular {
+    position: relative;
+    width: 250px;
+    height: 250px;
+}
+
+.stats-hero_circular-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+/* Círculo de fondo (gris oscuro) - se ve donde falta el azul */
+.stats-hero_circular-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 12;
+}
+
+/* ⭐ Círculo de progreso (azul) - 95% (segmento visible) ⭐ */
+.stats-hero_circular-progress {
+    fill: none;
+    stroke: #0066FF;
+    stroke-width: 12;
+    stroke-linecap: round;
+    /* Circunferencia = 2 * PI * 52 = 326.73 */
+    /* 95% = 326.73 * 0.95 = 310.39 */
+    /* Offset = 326.73 - 310.39 = 16.34 */
+    stroke-dasharray: 326.73;
+    stroke-dashoffset: 16.34;
+}
+
+/* Número 99% en el centro */
+.stats-hero_circular-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ─── Texto "TASA DE RECUPERACION" ─── */
+.stats-hero_circle-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 24px 0 0 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ═══ LADO DERECHO ═══ */
+.stats-hero_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Auto GRANDE */
+.stats-hero_car-img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.4));
+}
+
+/* Texto "+10,000 Vehículos Recuperados" */
+.stats-hero_bottom-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .stats-hero_wrapper {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+    }
+
+    .stats-hero_circular {
+        width: 200px;
+        height: 200px;
+    }
+
+    .stats-hero_circular-number {
+        font-size: 3.5rem;
+    }
+
+    .stats-hero_circle-label {
+        font-size: 1.3rem;
+    }
+
+    .stats-hero_car-img {
+        max-width: 400px;
+    }
+
+    .stats-hero_bottom-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-hero {
+        padding: 50px 0 40px;
+        min-height: auto;
+    }
+
+    .stats-hero_wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .stats-hero_left {
+        order: 0;
+    }
+
+    .stats-hero_right {
+        order: 1;
+    }
+
+    .stats-hero_circular {
+        width: 180px;
+        height: 180px;
+    }
+
+    .stats-hero_circular-number {
+        font-size: 3rem;
+    }
+
+    .stats-hero_circle-label {
+        font-size: 1.1rem;
+        margin-top: 18px;
+    }
+
+    .stats-hero_car-img {
+        max-width: 300px;
+    }
+
+    .stats-hero_bottom-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-hero {
+        padding: 30px 0 20px;
+    }
+
+    .stats-hero_wrapper {
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .stats-hero_circular {
+        width: 150px;
+        height: 150px;
+    }
+
+    .stats-hero_circular-number {
+        font-size: 2.5rem;
+    }
+
+    .stats-hero_circle-label {
+        font-size: 0.9rem;
+        margin-top: 14px;
+    }
+
+    .stats-hero_car-img {
+        max-width: 200px;
+    }
+
+    .stats-hero_bottom-text {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,840 @@
+/* ============================================================
+   PRODUCTO.CSS - Single Product Page (PDP)
+   Página normal con fondo blanco
+   ============================================================ */
+
+/* ─── Fondo general de la página ─── */
+html,
+body,
+.pdp {
+    background: #FFFFFF !important;
+}
+
+.pdp {
+    padding: calc(var(--nav-h, 90px) + 32px) 0 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-height: 100vh;
+}
+
+/* ─── Breadcrumb ─── */
+.pdp_breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 0.85rem;
+    color: #999999;
+}
+
+.pdp_breadcrumb a {
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.pdp_breadcrumb a:hover {
+    color: #0066FF;
+}
+
+.pdp_breadcrumb span:last-child {
+    color: #111111;
+    font-weight: 500;
+}
+
+/* ─── Layout principal (2 columnas, SIN recuadro negro) ─── */
+.pdp_main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+/* ─── Galería ─── */
+.pdp_gallery {
+    position: sticky;
+    top: calc(var(--nav-h, 90px) + 24px);
+}
+
+.pdp_gallery_main {
+    position: relative;
+    aspect-ratio: 1;
+    background: #F8FAFC;
+    border: 1px solid #E8ECF0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.pdp_gallery_svg {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdp_gallery_svg svg {
+    width: 100%;
+    height: 100%;
+    color: #0066FF;
+}
+
+.pdp_discount_badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #FF6B6B;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+.pdp_zoom_hint {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 0.75rem;
+    color: #999999;
+}
+
+.pdp_gallery_thumbs {
+    display: flex;
+    gap: 12px;
+}
+
+.pdp_thumb {
+    width: 80px;
+    height: 80px;
+    background: #FFFFFF;
+    border: 2px solid #E8ECF0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.pdp_thumb:hover {
+    border-color: #CCCCCC;
+}
+
+.pdp_thumb--active {
+    border-color: #0066FF;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.pdp_thumb_svg svg {
+    width: 80%;
+    height: 80%;
+    color: #0066FF;
+}
+
+/* ─── Información del producto ─── */
+.pdp_info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pdp_info_badges {
+    display: flex;
+    gap: 8px;
+}
+
+.pdp_badge {
+    padding: 4px 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    color: #FFFFFF;
+}
+
+.pdp_badge--new { background: #0066FF; }
+.pdp_badge--offer { background: #FF6B6B; }
+.pdp_badge--best { background: #FFD93D; color: #000000; }
+
+.pdp_title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111111;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.pdp_meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+.pdp_meta strong {
+    color: #333333;
+}
+
+.pdp_price_block {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 20px;
+    background: #F8FAFC;
+    border: 1px solid #E8ECF0;
+    border-radius: 12px;
+    flex-wrap: wrap;
+}
+
+.pdp_price_old {
+    font-size: 1.1rem;
+    color: #999999;
+    text-decoration: line-through;
+}
+
+.pdp_price_current {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0066FF;
+}
+
+.pdp_price_discount {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.1);
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+
+.pdp_stock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.pdp_stock_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.pdp_stock--available .pdp_stock_dot { background: #22C55E; }
+.pdp_stock--available { color: #22C55E; }
+.pdp_stock--low .pdp_stock_dot { background: #FFD93D; }
+.pdp_stock--low { color: #FFD93D; }
+
+.pdp_short_desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444444;
+}
+
+.pdp_details_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pdp_detail {
+    background: #F8FAFC;
+    border: 1px solid #E8ECF0;
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+.pdp_detail_label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #999999;
+    margin-bottom: 4px;
+}
+
+.pdp_detail_value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111111;
+}
+
+/* ─── Botones de acción ─── */
+.pdp_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pdp_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.pdp_btn--primary {
+    background: #0066FF;
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
+}
+
+.pdp_btn--primary:hover {
+    background: #0052CC;
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.pdp_btn--outline {
+    background: transparent;
+    color: #111111;
+    border: 1.5px solid #E8ECF0;
+}
+
+.pdp_btn--outline:hover {
+    border-color: #0066FF;
+    background: #F8FAFC;
+}
+
+.pdp_btn--whatsapp {
+    background: #25D366;
+    color: #FFFFFF;
+}
+
+.pdp_btn--whatsapp:hover {
+    background: #1DA851;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ─── Garantías ─── */
+.pdp_guarantees {
+    display: flex;
+    gap: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #E8ECF0;
+    flex-wrap: wrap;
+}
+
+.pdp_guarantee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #444444;
+}
+
+.pdp_guarantee svg {
+    color: #0066FF;
+    flex-shrink: 0;
+}
+
+/* ─── Tabs ─── */
+.pdp_tabs {
+    margin-bottom: 60px;
+}
+
+.pdp_tabs_nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid #E8ECF0;
+    margin-bottom: 32px;
+    overflow-x: auto;
+}
+
+.pdp_tab {
+    padding: 14px 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666666;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.pdp_tab:hover {
+    color: #111111;
+}
+
+.pdp_tab--active {
+    color: #111111;
+    border-bottom-color: #0066FF;
+}
+
+.pdp_tab_panel {
+    display: none;
+}
+
+.pdp_tab_panel--active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pdp_tab_panel p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444444;
+}
+
+/* ─── Especificaciones ─── */
+.pdp_specs_list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.pdp_specs_list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #333333;
+    padding: 12px 16px;
+    background: #F8FAFC;
+    border: 1px solid #E8ECF0;
+    border-radius: 10px;
+}
+
+.pdp_specs_list li svg {
+    flex-shrink: 0;
+    color: #0066FF;
+}
+
+/* ─── Instalación ─── */
+.pdp_install_list {
+    padding-left: 0;
+    counter-reset: step;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pdp_install_list li {
+    counter-increment: step;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.6;
+    padding: 14px 18px;
+    background: #F8FAFC;
+    border: 1px solid #E8ECF0;
+    border-radius: 10px;
+}
+
+.pdp_install_list li::before {
+    content: counter(step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 26px;
+    background: rgba(0, 102, 255, 0.08);
+    border: 1px solid rgba(0, 102, 255, 0.1);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #0066FF;
+}
+
+/* ─── FAQ ─── */
+.pdp_faq_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pdp_faq_item {
+    background: #FFFFFF;
+    border: 1px solid #E8ECF0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pdp_faq_item[open] {
+    border-color: #0066FF;
+}
+
+.pdp_faq_item summary {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111111;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pdp_faq_item summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #0066FF;
+    transition: transform 0.3s;
+}
+
+.pdp_faq_item[open] summary::after {
+    content: '−';
+}
+
+.pdp_faq_item summary::-webkit-details-marker {
+    display: none;
+}
+
+.pdp_faq_item p {
+    padding: 0 20px 16px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #666666;
+}
+
+/* ─── Productos relacionados ─── */
+.pdp_related {
+    padding-top: 40px;
+    border-top: 1px solid #E8ECF0;
+}
+
+.pdp_related_title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 24px;
+}
+
+.pdp_related_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.pdp_related_card {
+    background: #FFFFFF;
+    border: 1px solid #E8ECF0;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.pdp_related_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    border-color: #CCCCCC;
+}
+
+.pdp_related_img {
+    aspect-ratio: 4/3;
+    background: #F8FAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pdp_related_img svg {
+    width: 50%;
+    height: 50%;
+    color: #0066FF;
+}
+
+.pdp_related_info {
+    padding: 14px;
+}
+
+.pdp_related_info h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.pdp_related_price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.pdp_related_current {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0066FF;
+}
+
+.pdp_related_old {
+    font-size: 0.75rem;
+    color: #999999;
+    text-decoration: line-through;
+}
+
+/* ─── Not Found ─── */
+.pdp_not_found {
+    text-align: center;
+    padding: 80px 24px;
+}
+
+.pdp_not_found h2 {
+    font-size: 2rem;
+    color: #111111;
+    margin-bottom: 12px;
+}
+
+.pdp_not_found p {
+    color: #666666;
+    margin-bottom: 32px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .pdp_main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .pdp_gallery {
+        position: static;
+    }
+
+    .pdp_related_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pdp_specs_list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pdp {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: calc(var(--nav-h, 90px) + 20px);
+    }
+
+    .pdp_title {
+        font-size: 1.7rem;
+    }
+
+    .pdp_price_current {
+        font-size: 2rem;
+    }
+
+    .pdp_price_block {
+        padding: 12px 16px;
+    }
+
+    .pdp_details_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp_guarantees {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pdp_tab {
+        padding: 12px 16px;
+        font-size: 0.8rem;
+    }
+
+    .pdp_related_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .pdp_thumb {
+        width: 64px;
+        height: 64px;
+    }
+
+    .pdp_gallery_thumbs {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdp_related_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp_btn {
+        padding: 12px 16px;
+        font-size: 0.85rem;
+    }
+
+    .pdp_title {
+        font-size: 1.4rem;
+    }
+
+    .pdp_price_current {
+        font-size: 1.6rem;
+    }
+
+    .pdp_guarantees {
+        flex-wrap: wrap;
+    }
+
+    .pdp_actions {
+        gap: 8px;
+    }
+}
+
+/* ─── CONTENEDOR DE VARIANTES ─── */
+.pdp_variant_container {
+    margin-top: 20px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #EAEAEA;
+}
+
+.pdp_variant_label {
+    display: block;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.pdp_variant_row {
+    margin-bottom: 16px;
+}
+
+.pdp_variant_select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    background: #F8FAFC;
+    font-size: 1rem;
+    color: #111;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.pdp_variant_select:focus {
+    outline: none;
+    border-color: #0066FF;
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+/* 🟢 ESTILO DEL NUEVO BOTÓN DE COMPRAR */
+.pdp_buy_full {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+/* Ajuste para que los botones de abajo no queden pegados */
+.pdp_actions {
+    margin-top: 0;
+}
+
+/* ============================================================
+   CORRECCIÓN FINAL: IMAGEN GRANDE EN DETALLE
+   ============================================================ */
+
+/* Forzamos a la imagen a ocupar todo el espacio del cuadrado gris */
+.pdp_gallery_main img,
+.pdp_gallery_svg img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Aseguramos que el SVG (si lo hay) también se estire */
+.pdp_gallery_svg {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Ajustamos el contenedor para que no limite la imagen */
+.pdp_gallery_main {
+    aspect-ratio: 1 / 1 !important; /* Mantiene el cuadrado */
+    padding: 10px !important;
+}
+
+/* ============================================================
+   CORRECCIÓN: IMAGEN GRANDE EN PRODUCTOS RELACIONADOS
+   ============================================================ */
+
+/* Hacemos que la imagen ocupe todo el cuadro gris */
+.pdp_related_img img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Aseguramos que el contenedor gris permita que la imagen crezca */
+.pdp_related_img {
+    padding: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+/* Opcional: Si quieres un pequeño zoom al pasar el mouse sobre la imagen */
+.pdp_related_card:hover .pdp_related_img img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* ============================================================
+   QUITAR FONDO GRIS EN PRODUCTOS RELACIONADOS
+   ============================================================ */
+
+/* Convertimos el fondo gris en blanco puro */
+.pdp_related_img {
+    background: #FFFFFF !important;
+    border: 1px solid #EAEAEA !important; /* Opcional: un borde sutil para que se vea el recuadro */
+}
+
+/* Si prefieres que desaparezca el borde y se vea totalmente integrado, usa esto en lugar de lo de arriba: */
+/* 
+.pdp_related_img {
+    background: transparent !important;
+    border: none !important;
+} 
+*/

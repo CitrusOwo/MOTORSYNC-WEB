@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -v)",
+      "Bash(php -r \"error_reporting\\(E_ALL\\); ini_set\\('display_errors', 1\\); include 'index.php';\")",
+      "Bash(php -r \"include 'index.php';\")",
+      "Bash(grep -n \"^/\\\\*.*═══\" home.css)",
+      "WebFetch(domain:alpharage-pharmaceuticals.com)",
+      "Bash(curl -sL \"https://alpharage-pharmaceuticals.com/\")",
+      "Bash(curl -sL \"https://alpharage-pharmaceuticals.com/assets/index-BBnFqqZt.js\")",
+      "Bash(grep -oP '#[0-9a-fA-F]{3,8}' /tmp/alpharage_bundle.js)",
+      "Bash(grep -oP '\"[^\"]*className[^\"]*\"[^\"]*\"|className[=:][\"\\\\x60][^\"\\\\x60]{0,300}[\"\\\\x60]' /tmp/alpharage_bundle.js)",
+      "Bash(grep -oP 'className[=:][\"\\\\x60][^\"\\\\x60]{0,400}[\"\\\\x60]' /tmp/alpharage_bundle.js)",
+      "Bash(grep -oP 'className[=:][\"\\\\x60][^\"\\\\x60]{0,500}[\"\\\\x60]' /tmp/alpharage_bundle.js)",
+      "Bash(php *)",
+      "Bash(cat)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

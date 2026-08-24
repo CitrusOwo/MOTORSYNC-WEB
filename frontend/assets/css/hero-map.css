@@ -1,0 +1,309 @@
+/* ============================================================
+   HERO MAP - Mapa minimalista con pin GPS
+   ============================================================ */
+
+.hero_map-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MAPA CON LÍNEAS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_map-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+/* Calles horizontales */
+.hero_map-street-h {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #D0D0D0;
+}
+
+.hero_map-street-h:nth-child(1) { top: 15%; }
+.hero_map-street-h:nth-child(2) { top: 35%; }
+.hero_map-street-h:nth-child(3) { top: 55%; }
+.hero_map-street-h:nth-child(4) { top: 75%; }
+
+/* Calles verticales */
+.hero_map-street-v {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #D0D0D0;
+}
+
+.hero_map-street-v:nth-child(5) { left: 20%; }
+.hero_map-street-v:nth-child(6) { left: 40%; }
+.hero_map-street-v:nth-child(7) { left: 60%; }
+.hero_map-street-v:nth-child(8) { left: 80%; }
+
+/* Bloques de edificios (rectángulos) */
+.hero_map-block {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+
+.hero_map-block:nth-child(9) {
+  top: 20%;
+  left: 10%;
+  width: 80px;
+  height: 60px;
+}
+
+.hero_map-block:nth-child(10) {
+  top: 20%;
+  left: 50%;
+  width: 100px;
+  height: 80px;
+}
+
+.hero_map-block:nth-child(11) {
+  top: 60%;
+  left: 25%;
+  width: 90px;
+  height: 70px;
+}
+
+.hero_map-block:nth-child(12) {
+  top: 60%;
+  left: 65%;
+  width: 70px;
+  height: 90px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PIN GPS CENTRAL
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  animation: pinBounce 2s ease-in-out infinite;
+}
+
+@keyframes pinBounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+/* Pin SVG */
+.hero_map-pin svg {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+/* Círculo pulsante detrás del pin */
+.hero_map-pin-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  animation: pulseFade 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulseFade {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RUTA ANIMADA (opcional)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_map-route {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  height: 40%;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero_map-route svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero_map-route path {
+  stroke: #000;
+  stroke-width: 3;
+  stroke-dasharray: 10 5;
+  stroke-linecap: round;
+  fill: none;
+  animation: routeFlow 3s linear infinite;
+}
+
+@keyframes routeFlow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   INDICADORES DE ESQUINA
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.hero_map-indicator {
+  position: absolute;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.hero_map-indicator--speed {
+  top: 20px;
+  left: 20px;
+  animation-delay: 0.2s;
+}
+
+.hero_map-indicator--signal {
+  top: 20px;
+  right: 20px;
+  animation-delay: 0.4s;
+}
+
+.hero_map-indicator--time {
+  bottom: 20px;
+  right: 20px;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero_map-indicator-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: dotBlink 2s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (max-width: 1024px) {
+  .hero_map-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero_map-pin svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero_map-indicator {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_map-container {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero_map-pin svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero_map-pin-pulse {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+  }
+
+  .hero_map-indicator {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .hero_map-indicator--speed,
+  .hero_map-indicator--signal {
+    top: 12px;
+  }
+
+  .hero_map-indicator--speed {
+    left: 12px;
+  }
+
+  .hero_map-indicator--signal {
+    right: 12px;
+  }
+
+  .hero_map-indicator--time {
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}

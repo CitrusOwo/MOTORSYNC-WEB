@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS & TRANSITIONS
+   MotorSync — Premium Micro-interactions
+   Fade, Slide, Hover, Loading, Performance
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Page Load Transition ─── */
+html.is-loading {
+    overflow: hidden;
+}
+
+html.is-loading body {
+    opacity: 0;
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.is-loaded body {
+    opacity: 1;
+}
+
+/* ─── Scroll Progress Bar ─── */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: #3B82F6;
+    z-index: 10000;
+    transition: width 0.1s linear;
+    will-change: width;
+}
+
+/* ─── Base Animation States ─── */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+[data-animate].animated {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+/* ─── Animation Variants ─── */
+[data-animate="fade"] {
+    transform: none;
+}
+
+[data-animate="slide-up"] {
+    transform: translateY(32px);
+}
+
+[data-animate="slide-down"] {
+    transform: translateY(-24px);
+}
+
+[data-animate="slide-left"] {
+    transform: translateX(40px);
+}
+
+[data-animate="slide-right"] {
+    transform: translateX(-40px);
+}
+
+[data-animate="scale"] {
+    transform: scale(0.95);
+}
+
+[data-animate="scale"].animated {
+    transform: scale(1);
+}
+
+/* ─── Stagger Delays (for grid children) ─── */
+[data-stagger] > [data-animate]:nth-child(1) { transition-delay: 0ms; }
+[data-stagger] > [data-animate]:nth-child(2) { transition-delay: 80ms; }
+[data-stagger] > [data-animate]:nth-child(3) { transition-delay: 160ms; }
+[data-stagger] > [data-animate]:nth-child(4) { transition-delay: 240ms; }
+[data-stagger] > [data-animate]:nth-child(5) { transition-delay: 320ms; }
+[data-stagger] > [data-animate]:nth-child(6) { transition-delay: 400ms; }
+
+/* ─── Card Hover Elevation ─── */
+.benefit_card,
+.security_card,
+.testimonial_card,
+.stat_card,
+.pricing_card,
+.product_card,
+.contact_item {
+    transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.35s ease;
+}
+
+.benefit_card:hover,
+.security_card:hover,
+.testimonial_card:hover,
+.stat_card:hover,
+.pricing_card:hover,
+.product_card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 16px 48px rgba(15, 23, 42, 0.08),
+        0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.contact_item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* ─── Button Interactions ─── */
+.btn,
+.pricing_card__btn,
+.hero_btn {
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s ease;
+}
+
+.btn:active,
+.pricing_card__btn:active,
+.hero_btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+/* ─── Icon Container Transitions ─── */
+.benefit_icon,
+.security_card_icon {
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease,
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefit_card:hover .benefit_icon,
+.security_card:hover .security_card_icon {
+    transform: scale(1.05);
+}
+
+/* ─── Form Focus Transitions ─── */
+.form_input,
+.form_select {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* ─── Link Hover Underline ─── handled by navbar.css */
+
+/* ─── Lazy Load Images ─── */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+img.lazy-loaded {
+    opacity: 1;
+}
+
+/* ─── Testimonial Stars Subtle Entrance ─── */
+.testimonial_stars svg {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.animated .testimonial_stars svg,
+.testimonial_card.animated .testimonial_stars svg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.testimonial_stars svg:nth-child(1) { transition-delay: 0ms; }
+.testimonial_stars svg:nth-child(2) { transition-delay: 60ms; }
+.testimonial_stars svg:nth-child(3) { transition-delay: 120ms; }
+.testimonial_stars svg:nth-child(4) { transition-delay: 180ms; }
+.testimonial_stars svg:nth-child(5) { transition-delay: 240ms; }
+
+/* ─── Stat Bar Fill Animation ─── */
+.stat_bar_fill {
+    width: 0%;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.stat_bar_fill.animated {
+    width: var(--fill-width, 75%);
+}
+
+/* ─── Pricing Card Amount Transition ─── */
+.pricing_card__amount {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+}
+
+.pricing_card__amount.animating {
+    transform: translateY(-8px);
+    opacity: 0;
+}
+
+/* ─── Hero SVG Float Animations ─── defined in hero.css */
+
+/* ─── Billing Toggle Badge Pulse ─── */
+.billing-toggle__badge {
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* ─── WhatsApp Float Button ─── */
+.whatsapp_float {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.whatsapp_float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
+}
+
+/* ─── Section Badge Subtle Animation ─── */
+.section_badge {
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* ─── Footer Social Icons ─── */
+.footer_social a {
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.footer_social a:hover {
+    transform: translateY(-3px);
+}
+
+/* ─── Smooth Scroll Behavior ─── */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    [data-animate] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .scroll-progress {
+        display: none;
+    }
+
+    .hero_svg-pin,
+    .hero_svg-satellite,
+    .hero_svg-phone {
+        animation: none;
+    }
+}
+
+/* ─── GPU Acceleration Hints ─── */
+.benefit_card,
+.security_card,
+.testimonial_card,
+.stat_card,
+.pricing_card,
+.product_card {
+    will-change: transform;
+}
+
+/* ─── Smooth Focus States ─── */
+:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 3px;
+    transition: outline-offset 0.2s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 3px;
+}
