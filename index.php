@@ -1,3 +1,15 @@
+<?php
+// ═══ DEFINIR BASE URL ═══
+// Detecta automáticamente si está en local o en producción
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+$host = $_SERVER['HTTP_HOST'];
+$base_url = $protocol . $host;
+
+// Para localhost, mantener rutas relativas; para producción, usar absolutas
+$is_production = isset($_SERVER['RENDER']) || isset($_SERVER['RENDER_GIT_COMMIT']);
+$asset_prefix = $is_production ? '/' : '';
+?>
+
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
@@ -26,33 +38,33 @@
     <meta name="twitter:description" content="Dispositivos GPS profesionales con rastreo en tiempo real y monitoreo 24/7.">
 
     <!-- ═══ Favicon ═══ -->
-    <link rel="icon" type="image/png" href="frontend/assets/img/icono.png">
+    <link rel="icon" type="image/png" href="<?php echo $asset_prefix; ?>frontend/assets/img/icono.png">
 
     <!-- ═══ Fonts: Inter ═══ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ═══ Stylesheets ═══ -->
-    <link rel="stylesheet" href="frontend/assets/css/variables.css">
-    <link rel="stylesheet" href="frontend/assets/css/style.css">
-    <link rel="stylesheet" href="frontend/assets/css/animations-scroll.css">
-    <link rel="stylesheet" href="frontend/assets/css/navbar.css">
-    <link rel="stylesheet" href="frontend/assets/css/landing.css">
-    <link rel="stylesheet" href="frontend/assets/css/home.css">
-    <link rel="stylesheet" href="frontend/assets/css/carrito.css">
-    <link rel="stylesheet" href="frontend/assets/css/footer.css">
-    <link rel="stylesheet" href="frontend/assets/css/animations.css">
-    <link rel="stylesheet" href="frontend/assets/css/responsive.css">
+    <!-- ═══ Stylesheets (rutas corregidas) ═══ -->
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/variables.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/animations-scroll.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/navbar.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/landing.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/home.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/carrito.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/footer.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/animations.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/responsive.css">
 
-    <!-- ═══ Corporate Redesign (CORREGIDO) ═══ -->
-    <link rel="stylesheet" href="frontend/assets/css/beneficios.css">       
-    <link rel="stylesheet" href="frontend/assets/css/planes-corporate.css">
-    <link rel="stylesheet" href="frontend/assets/css/hero-final.css">
-    <link rel="stylesheet" href="frontend/assets/css/hero-map.css">
-    <link rel="stylesheet" href="frontend/assets/css/trust-brands-new.css">
-    <link rel="stylesheet" href="frontend/assets/css/app-download.css">
-    <link rel="stylesheet" href="frontend/assets/css/stats-hero.css?v=4">
+    <!-- ═══ Corporate Redesign ═══ -->
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/beneficios.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/planes-corporate.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/hero-final.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/hero-map.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/trust-brands-new.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/app-download.css">
+    <link rel="stylesheet" href="<?php echo $asset_prefix; ?>frontend/assets/css/stats-hero.css?v=4">
 
     <!-- ═══ Three.js ═══ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -92,7 +104,7 @@
         <?php include 'frontend/sections/hero-final.php'; ?>
 
         <!-- ═══ NUEVA SECCIÓN DE ESTADÍSTICAS ═══ -->
-         <?php include 'frontend/sections/stats-hero.php'; ?>
+        <?php include 'frontend/sections/stats-hero.php'; ?>
 
         <!-- ═══ 2. EMPRESAS QUE CONFÍAN ═══ -->
         <?php include 'frontend/sections/trust-brands-new.php'; ?>
@@ -129,12 +141,12 @@
     <!-- ═══ Footer ═══ -->
     <?php include 'frontend/sections/footer.php'; ?>
 
-    <!-- ═══ JavaScript ═══ -->
-    <script src="frontend/assets/js/scroll-animations.js"></script>
-    <script type="module" src="frontend/assets/js/main.js"></script>
-    <script src="frontend/assets/js/landing.js"></script>
-    <script src="frontend/assets/js/carousel.js"></script>
-    <script src="frontend/assets/js/globe.js"></script>
-    <script src="frontend/assets/js/trust-brands-slider.js"></script>
+    <!-- ═══ JavaScript (rutas corregidas) ═══ -->
+    <script src="<?php echo $asset_prefix; ?>frontend/assets/js/scroll-animations.js"></script>
+    <script type="module" src="<?php echo $asset_prefix; ?>frontend/assets/js/main.js"></script>
+    <script src="<?php echo $asset_prefix; ?>frontend/assets/js/landing.js"></script>
+    <script src="<?php echo $asset_prefix; ?>frontend/assets/js/carousel.js"></script>
+    <script src="<?php echo $asset_prefix; ?>frontend/assets/js/globe.js"></script>
+    <script src="<?php echo $asset_prefix; ?>frontend/assets/js/trust-brands-slider.js"></script>
 </body>
 </html>

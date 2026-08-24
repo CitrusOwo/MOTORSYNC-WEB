@@ -1,10 +1,6 @@
 services:
   - type: web
-    name: motorsync
-    env: php
-    buildCommand: composer install --no-dev
-    startCommand: php -S 0.0.0.0:10000
+    name: motorsync-web
+    env: docker
+    dockerfilePath: ./Dockerfile
     plan: free
-    envVars:
-      - key: PHP_VERSION
-        value: 8.2
